@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #F3F4F6;
+  --color-white: #FFFFFF;
+  --color-text: #030303;
+  --color-muted: #54547E;
+  --color-cta: #00221E;
+  --color-cta-hover: #0848C5;
+  --color-border: #DDDDDD;
+}
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 3px; }
+
+a, button { transition: all 0.2s ease; }
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.02); }
+  66% { transform: translate(-10px, 10px) scale(0.98); }
+}
+
+.hero-blob { animation: blobFloat 8s ease-in-out infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track { animation: marquee 28s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
