@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Manrope, JetBrains_Mono, Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
+const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin"], weight: ["300","400","500","600","700","800"] });
+const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"], weight: ["400","500","600","700"] });
+const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["400","500","600","700"] });
+const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["400","500","600","700"] });
 
 export const metadata: Metadata = {
   title: "Lucenex Corp — Data, Analytics & AI",
@@ -15,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={dmSans.variable}>
-      <body style={{ fontFamily: "var(--font-dm-sans), 'DM Sans', sans-serif" }}>
+    <html lang="en" className={`${manrope.variable} ${jetbrains.variable} ${poppins.variable} ${montserrat.variable}`}>
+      <body style={{ fontFamily: "var(--font-manrope), 'Manrope', sans-serif" }}>
         {children}
       </body>
     </html>

@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #ECEDF5;
-  --card: rgba(255, 255, 255, 0.75);
-  --text: #0A0A1E;
-  --muted: #54547E;
-  --cta: #00221E;
-  --cta-hover: #0848C5;
-  --border: rgba(255, 255, 255, 0.8);
-  --gold: #C9A84C;
+  --bg:          #EEEEF4;
+  --card-wrap:   #E0E0EB;
+  --card-inner:  #EEEEF4;
+  --card-border: #CDCDDD;
+  --text:        #000000;
+  --body:        #54547E;
+  --label:       #49496D;
+  --label-faint: #9797B9;
+  --green:       #013220;
+  --green-2:     #00221E;
+  --blue-hover:  #0848C5;
+  --ring-shadow: 0 0 0 0.25rem #e0e0eb, 0 0.125px 0.125rem 0.5px #bcbcd2;
 }
 
 @theme inline {
@@ -17,14 +21,44 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', 'Manrope', sans-serif;
+  font-family: 'Manrope', sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Bento card system — exact from WP source */
+.bento-wrap {
+  border: 1px solid var(--card-border);
+  background-color: var(--card-wrap);
+  border-radius: 2rem;
+  padding: 0.75rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.08),
+              inset 0 0.125rem 0.5rem -0.0625rem rgba(27,27,33,0.04);
+}
+
+.bento-card {
+  border: 1px solid var(--card-border);
+  background-color: var(--card-inner);
+  border-radius: 1.5rem;
+}
+
+.bento-card-white {
+  border: 1px solid var(--card-border);
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+}
+
+/* Hero divider line */
+.hero-divider {
+  background-image: linear-gradient(90deg, #eeeef4, #cdcddd 50%, #eeeef4);
+  box-shadow: 0 0.5px 1px 0 #ffffff;
+  height: 1px;
+  width: 100%;
+  max-width: 35rem;
 }
 
 /* Marquee */
@@ -34,22 +68,3 @@ body {
 }
 .marquee-track { animation: marquee 30s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
-
-/* Card glass style */
-.glass-card {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 4px 32px rgba(100, 100, 160, 0.08);
-}
-
-/* Form inputs */
-input, textarea {
-  outline: none;
-  transition: border-color 0.2s;
-}
-input:focus, textarea:focus {
-  border-color: var(--cta) !important;
-}

@@ -1,116 +1,178 @@
 import Image from "next/image";
 
 const clientLogos = [
-  { name: "Yassir", src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg" },
+  { name: "Yassir",   src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg" },
   { name: "RankMath", src: "https://lucenexcorp.com/wp-content/uploads/2026/01/rank-math-logo.svg" },
-  { name: "one.com", src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/onecom-removebg-preview.png?fit=600%2C74&ssl=1" },
+  { name: "one.com",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/onecom-removebg-preview.png?fit=600%2C74&ssl=1" },
 ];
 
-const techIcons = [
-  { name: "Power BI", color: "#F2C811", icon: "▦" },
-  { name: "Tableau", color: "#1F77B4", icon: "◈" },
-  { name: "Looker", color: "#4285F4", icon: "◉" },
-  { name: "Snowflake", color: "#29B5E8", icon: "❄" },
-  { name: "Databricks", color: "#FF3621", icon: "◆" },
-  { name: "dbt", color: "#FF694A", icon: "✕" },
-  { name: "AWS", color: "#FF9900", icon: "⬡" },
-  { name: "GCP", color: "#4285F4", icon: "☁" },
-  { name: "Python", color: "#3776AB", icon: "⊚" },
-  { name: "SQL", color: "#336791", icon: "⋮" },
-  { name: "JavaScript", color: "#F7DF1E", icon: "JS" },
-  { name: "WordPress", color: "#21759B", icon: "W" },
-  { name: "Java", color: "#007396", icon: "☕" },
+// All icons sourced directly from the WordPress media library — exact same assets as the original site
+const techRow1 = [
+  { name: "Power BI",   src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-power-bi-2021-50.png?fit=50%2C50" },
+  { name: "Tableau",    src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-tableau-software-50.webp?fit=50%2C50" },
+  { name: "Looker",     src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-google-looker-50.png?fit=50%2C50" },
+  { name: "Snowflake",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-snowflake-48.webp?fit=48%2C48" },
+  { name: "DuckDB",     src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/duckdb-icon-logo-png_seeklogo-554697.webp?fit=300%2C300" },
+  { name: "Databricks", src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Databricks-Red-scaled.webp?fit=2560%2C1856" },
+  { name: "dbt",        src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Dbt-scaled.webp?fit=300%2C206" },
+];
+
+const techRow2 = [
+  { name: "AWS",          src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-aws-48.webp?fit=48%2C48" },
+  { name: "Google Cloud", src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-google-cloud-48.png?fit=48%2C48" },
+  { name: "Python",       src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-python-48.webp?fit=48%2C48" },
+  { name: "SQL",          src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-sql-48.png?fit=48%2C48" },
+  { name: "JavaScript",   src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-javascript-48.webp?fit=48%2C48" },
+  { name: "WordPress",    src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-wordpress-48.webp?fit=48%2C48" },
+  { name: "Java",         src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-java-94.webp?fit=94%2C94" },
 ];
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-24 pb-16 px-6">
-      {/* Background gradient orbs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-125 rounded-full opacity-50"
-          style={{ background: "radial-gradient(ellipse, rgba(180,180,240,0.4) 0%, transparent 70%)" }} />
-        <div className="absolute top-10 left-1/3 w-100 h-100 rounded-full opacity-30"
-          style={{ background: "radial-gradient(ellipse, rgba(160,200,230,0.5) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-20 right-1/4 w-87.5 h-87.5 rounded-full opacity-25"
-          style={{ background: "radial-gradient(ellipse, rgba(180,160,230,0.4) 0%, transparent 70%)" }} />
+    <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: "#EEEEF4", paddingTop: "7rem", paddingBottom: "4rem" }}>
+
+      {/* Background blob — exact from WP: blur 2rem, mix-blend-mode color */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
+        <div style={{
+          position: "absolute",
+          width: "100vw",
+          maxWidth: "75rem",
+          top: 0,
+          left: "50%",
+          transform: "translateY(12%) translateX(-62%)",
+          filter: "blur(2rem)",
+          mixBlendMode: "color",
+          opacity: 0.9,
+        }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://cdn.prod.website-files.com/67f510f568bf33e1f98526f9/67fabdb67642747547da3329_Hero%20Big%20Blob%20Light.svg"
+            alt=""
+            className="w-full h-auto"
+          />
+        </div>
       </div>
 
-      <div className="relative flex flex-col items-center text-center max-w-3xl w-full">
-        {/* Circular logo */}
-        <div className="mb-5 flex items-center gap-3">
+      {/* Content — max-width 60rem, centered */}
+      <div className="relative mx-auto px-6 flex flex-col items-center text-center" style={{ maxWidth: "60rem" }}>
+
+        {/* Logo + brand name */}
+        <div className="flex items-center gap-3 mb-6">
           <Image
             src="https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/lucenex_logo_cropped.webp?fit=257%2C262&ssl=1"
-            alt="Lucenex Corp"
-            width={72}
-            height={72}
-            className="rounded-full"
-            unoptimized
-          />
-          <span className="text-2xl font-bold tracking-wider text-[#0A0A1E] uppercase">LUCENEX</span>
+            alt="Lucenex" width={64} height={64} className="rounded-full" unoptimized priority />
+          <span style={{ fontFamily: "var(--font-montserrat),'Montserrat',sans-serif", fontSize: "1.7rem", fontWeight: 600 }}>
+            LUCENEX
+          </span>
         </div>
 
-        {/* Tagline */}
-        <p className="text-xs font-semibold tracking-widest uppercase text-[#54547E] mb-6">
+        {/* Overline — JetBrains Mono */}
+        <p className="mb-4" style={{
+          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
+          fontSize: "0.875rem",
+          fontWeight: 500,
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          color: "#49496D",
+        }}>
           Advanced Data Intelligence &amp; AI Automation Solutions
         </p>
 
-        {/* Headline */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A0A1E] leading-tight mb-6">
+        {/* Hero headline — Manrope 500, 3.5rem */}
+        <h1 className="mb-4" style={{
+          fontFamily: "var(--font-manrope),'Manrope',sans-serif",
+          fontSize: "3.5rem",
+          fontWeight: 500,
+          lineHeight: 1.1,
+          letterSpacing: "-0.01em",
+          color: "#000000",
+          maxWidth: "860px",
+        }}>
           Data, Analytics &amp; AI That Power Smarter Decisions
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg text-[#54547E] max-w-xl mb-10 leading-relaxed">
-          Lucenex Corp builds data platforms and AI-powered software that help businesses
-          automate smarter and make decisions with confidence.
+        <p className="mb-6" style={{
+          fontFamily: "var(--font-manrope),'Manrope',sans-serif",
+          fontSize: "1.25rem",
+          fontWeight: 400,
+          lineHeight: 1.5,
+          color: "#54547E",
+          maxWidth: "800px",
+        }}>
+          Lucenex Corp builds data platforms and AI-powered software that help
+          businesses automate smarter and make decisions with confidence.
         </p>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="bg-[#00221E] text-white font-semibold px-8 py-3.5 rounded-lg text-base hover:bg-[#0848C5] transition-colors mb-16"
-        >
+        {/* Decorative divider */}
+        <div className="hero-divider mb-6" />
+
+        {/* CTA button — #013220, border-radius 10px, ring shadow */}
+        <a href="#contact" className="inline-block mb-8 text-white font-medium transition-opacity hover:opacity-90"
+          style={{
+            fontFamily: "var(--font-manrope),'Manrope',sans-serif",
+            backgroundColor: "#013220",
+            fontSize: "1rem",
+            fontWeight: 400,
+            borderRadius: "10px",
+            padding: "0.75rem 2rem",
+            boxShadow: "var(--ring-shadow)",
+          }}>
           Contact Us
         </a>
 
-        {/* Client logos */}
-        <p className="text-[10px] font-bold tracking-widest uppercase text-[#54547E] mb-6">
+        {/* "Powered by" row */}
+        <p className="mb-5" style={{
+          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
+          fontSize: "0.75rem",
+          fontWeight: 500,
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          color: "#49496D",
+        }}>
           Powered by expert engineers from trusted brands
         </p>
-        <div className="flex items-center justify-center gap-10 mb-12 flex-wrap">
-          {clientLogos.map((logo) => (
-            <Image
-              key={logo.name}
-              src={logo.src}
-              alt={logo.name}
-              width={100}
-              height={28}
-              className="h-7 w-auto opacity-70 hover:opacity-100 transition-opacity object-contain"
-              unoptimized
-            />
+
+        {/* Client logos with | separators */}
+        <div className="flex items-center justify-center mb-5">
+          {clientLogos.map((logo, i) => (
+            <div key={logo.name} className="flex items-center">
+              {i > 0 && <div className="mx-8" style={{ width: 1, height: 28, backgroundColor: "#CDCDDD" }} />}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo.src} alt={logo.name}
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                style={{ height: 28, width: "auto" }} />
+            </div>
           ))}
         </div>
 
-        {/* Separator */}
-        <div className="w-full flex items-center gap-4 mb-10">
-          <div className="flex-1 h-px bg-[#54547E]/20" />
-          <p className="text-[10px] font-bold tracking-widest uppercase text-[#54547E] whitespace-nowrap">
-            Leveraging industry-grade tools relied on by top tech teams
-          </p>
-          <div className="flex-1 h-px bg-[#54547E]/20" />
+        {/* "Leveraging" label */}
+        <p className="mb-7" style={{
+          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
+          fontSize: "0.75rem",
+          fontWeight: 500,
+          textTransform: "uppercase",
+          letterSpacing: "0.03em",
+          color: "#49496D",
+        }}>
+          Leveraging industry-grade tools relied on by top tech teams
+        </p>
+
+        {/* Tech icons row 1 */}
+        <div className="flex flex-wrap items-center justify-center gap-8 mb-6">
+          {techRow1.map(t => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={t.name} src={t.src} alt={t.name} title={t.name}
+              className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          ))}
         </div>
 
-        {/* Tech icons */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {techIcons.map((tech) => (
-            <div
-              key={tech.name}
-              title={tech.name}
-              className="w-11 h-11 rounded-xl flex items-center justify-center text-sm font-bold shadow-sm"
-              style={{ background: `${tech.color}18`, color: tech.color, border: `1px solid ${tech.color}30` }}
-            >
-              {tech.icon}
-            </div>
+        {/* Tech icons row 2 */}
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {techRow2.map(t => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={t.name} src={t.src} alt={t.name} title={t.name}
+              className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           ))}
         </div>
       </div>
