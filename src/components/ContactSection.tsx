@@ -21,8 +21,28 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 px-6" style={{ backgroundColor: "#EEEEF4" }}>
-      <div className="mx-auto" style={{ maxWidth: "50rem" }}>
+    <section id="contact" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#EEEEF4" }}>
+      {/* CTA blob — inverted hero blob, centered, blurred — exact from WP */}
+      <div aria-hidden style={{
+        position: "absolute", inset: "50% auto auto 50%",
+        transform: "translate(-50%, -50%)",
+        filter: "blur(2rem)",
+        width: "75rem", maxWidth: "90vw", zIndex: 0, pointerEvents: "none",
+      }}>
+        <svg width="1200" height="430" viewBox="0 0 1200 430" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "auto" }}>
+          <g style={{ mixBlendMode: "color" }}>
+            <path d="M607.703 430C260.263 430 -0.000254676 115.959 0 10.5245C0.000128428 -42.6439 335.491 150.551 607.703 148.572C874.687 146.63 1200 -46.4896 1200 10.5245C1200 125.537 945.792 430 607.703 430Z" fill="url(#ctaGrad)"/>
+          </g>
+          <defs>
+            <radialGradient id="ctaGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 216.434) scale(600 227.873)">
+              <stop stopColor="#EBFFF5"/>
+              <stop offset="1" stopColor="#E0E0FF"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="relative mx-auto" style={{ maxWidth: "50rem", zIndex: 1 }}>
 
         {/* Header */}
         <div className="text-center mb-10">

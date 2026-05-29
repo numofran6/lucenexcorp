@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: "#EEEEF4", paddingTop: "7rem", paddingBottom: "4rem" }}>
 
-      {/* Background blob — exact from WP: blur 2rem, mix-blend-mode color */}
+      {/* Hero blob — inline SVG, exact gradient from WP source, blur 2rem, mix-blend-mode color */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
         <div style={{
           position: "absolute",
@@ -42,14 +42,18 @@ export default function Hero() {
           transform: "translateY(12%) translateX(-62%)",
           filter: "blur(2rem)",
           mixBlendMode: "color",
-          opacity: 0.9,
         }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://cdn.prod.website-files.com/67f510f568bf33e1f98526f9/67fabdb67642747547da3329_Hero%20Big%20Blob%20Light.svg"
-            alt=""
-            className="w-full h-auto"
-          />
+          <svg width="1201" height="433" viewBox="0 0 1201 433" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "auto" }}>
+            <g style={{ mixBlendMode: "color" }}>
+              <path d="M608.564 0.179718C261.123 0.179718 0.860097 315.682 0.860352 421.606C0.86048 475.022 336.352 280.928 608.564 282.917C875.547 284.868 1200.86 478.886 1200.86 421.606C1200.86 306.059 946.652 0.179718 608.564 0.179718Z" fill="url(#heroGrad)"/>
+            </g>
+            <defs>
+              <radialGradient id="heroGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600.86 214.739) scale(600 228.933)">
+                <stop stopColor="#EBFFF5"/>
+                <stop offset="1" stopColor="#E0E0FF"/>
+              </radialGradient>
+            </defs>
+          </svg>
         </div>
       </div>
 

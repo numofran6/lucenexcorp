@@ -12,7 +12,7 @@ const mn = "var(--font-manrope),'Manrope',sans-serif";
 
 export default function Stats() {
   return (
-    <section id="about" className="py-24 px-6" style={{ backgroundColor: "#EEEEF4" }}>
+    <section id="about" className="pt-20 pb-10 px-6" style={{ backgroundColor: "#EEEEF4" }}>
       <div className="mx-auto" style={{ maxWidth: "65rem" }}>
 
         {/* Overline */}
@@ -23,9 +23,18 @@ export default function Stats() {
           We build like it&apos;s our own.
         </p>
 
+        {/* Consulting card + stats in bracket rail */}
+        <div className="flex items-stretch">
+          {/* Left bracket */}
+          <div className="pg_line-wrap hidden md:flex">
+            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+          </div>
+
+          <div className="flex-1 min-w-0">
         {/* Consulting card — bento-wrap > bento-card-white */}
         <div className="bento-wrap mb-4">
-          <div className="bento-card-white p-6 flex flex-col md:flex-row md:items-center gap-6">
+          <div className="bento-card-white relative overflow-hidden p-6 flex flex-col md:flex-row md:items-center gap-6">
+            <div className="bento-glow mint" />
             <div className="flex items-center gap-4 shrink-0">
               <Image
                 src="https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/lucenex_logo_cropped.webp?fit=257%2C262&ssl=1"
@@ -47,7 +56,8 @@ export default function Stats() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {stats.map(s => (
             <div key={s.label} className="bento-wrap">
-              <div className="bento-card-white p-6 text-center">
+              <div className="bento-card-white relative overflow-hidden p-6 text-center">
+                <div className="bento-glow" />
                 <p style={{ fontFamily: mn, fontSize: "2.5rem", fontWeight: 700, color: "#000", lineHeight: 1 }} className="mb-1">
                   {s.value}
                 </p>
@@ -77,6 +87,13 @@ export default function Stats() {
             Start sharpening your idea.
           </a>
         </div>
+          </div>{/* end flex-1 */}
+
+          {/* Right bracket */}
+          <div className="pg_line-wrap right hidden md:flex">
+            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+          </div>
+        </div>{/* end bracket rail flex */}
       </div>
     </section>
   );

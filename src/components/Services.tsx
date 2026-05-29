@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
 const mn = "var(--font-manrope),'Manrope',sans-serif";
 const jb = "var(--font-jetbrains),'JetBrains Mono',monospace";
@@ -37,6 +36,12 @@ export default function Services() {
 
         {/* Section header */}
         <div className="flex flex-col items-center text-center mb-12">
+          {/* Dotted grid ornament */}
+          <div className="grid gap-0.5 mb-4 opacity-30" style={{ gridTemplateColumns: "repeat(5, 1fr)" }}>
+            {Array.from({ length: 25 }).map((_, i) => (
+              <div key={i} className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#49496D" }} />
+            ))}
+          </div>
           <p className="mb-4" style={{ fontFamily: jb, fontSize: "0.75rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.03em", color: "#49496D" }}>
             Our Services
           </p>
@@ -58,11 +63,19 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service cards */}
-        <div className="flex flex-col gap-4">
+        {/* Service cards in bracket rail */}
+        <div className="flex items-stretch">
+          {/* Left bracket */}
+          <div className="pg_line-wrap hidden md:flex">
+            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+          </div>
+
+          <div className="flex-1 min-w-0 flex flex-col gap-4">
           {services.map((s, i) => (
             <div key={s.num} className="bento-wrap">
-              <div className="bento-card-white overflow-hidden">
+              <div className="bento-card-white relative overflow-hidden">
+                {/* Card top-edge glow orb */}
+                <div className="bento-glow" />
                 {/* Card content */}
                 <div className="flex items-start gap-6 p-7">
                   {/* Ghost number */}
@@ -80,10 +93,11 @@ export default function Services() {
                     </p>
                   </div>
 
-                  {/* Image */}
+                  {/* Image — plain img to ensure external WP images load */}
                   <div className="hidden md:block shrink-0 rounded-xl overflow-hidden" style={{ width: 220, height: 140 }}>
-                    <Image src={s.img} alt={s.title} width={220} height={140}
-                      className="w-full h-full object-cover" unoptimized />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={s.img} alt={s.title} loading="lazy"
+                      className="w-full h-full object-cover" />
                   </div>
                 </div>
 
@@ -110,7 +124,13 @@ export default function Services() {
               </div>
             </div>
           ))}
-        </div>
+          </div>{/* end flex-1 */}
+
+          {/* Right bracket */}
+          <div className="pg_line-wrap right hidden md:flex">
+            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+          </div>
+        </div>{/* end bracket rail flex */}
       </div>
     </section>
   );
