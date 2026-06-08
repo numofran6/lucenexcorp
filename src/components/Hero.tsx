@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const clientLogos = [
-  { name: "Yassir",   src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg" },
-  { name: "RankMath", src: "https://lucenexcorp.com/wp-content/uploads/2026/01/rank-math-logo.svg" },
-  { name: "one.com",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/onecom-removebg-preview.png?fit=600%2C74&ssl=1" },
+  { name: "Yassir",   src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg",                                           h: 28 },
+  { name: "RankMath", src: "https://lucenexcorp.com/wp-content/uploads/2026/01/rank-math-logo.svg",                                                      h: 28 },
+  { name: "one.com",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/onecom-removebg-preview.png?fit=600%2C74&ssl=1",                h: 18 },
 ];
 
 // All icons sourced directly from the WordPress media library — exact same assets as the original site
@@ -108,11 +108,8 @@ export default function Hero() {
           businesses automate smarter and make decisions with confidence.
         </p>
 
-        {/* Decorative divider */}
-        <div className="hero-divider mb-6" />
-
         {/* CTA button — #013220, border-radius 10px, ring shadow */}
-        <a href="#contact" className="inline-block mb-8 text-white font-medium transition-opacity hover:opacity-90"
+        <a href="#contact" className="inline-block mb-12 text-white font-medium transition-opacity hover:opacity-90"
           style={{
             fontFamily: "var(--font-manrope),'Manrope',sans-serif",
             backgroundColor: "#013220",
@@ -125,42 +122,50 @@ export default function Hero() {
           Contact Us
         </a>
 
-        {/* "Powered by" row */}
-        <p className="mb-5" style={{
-          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-          fontSize: "0.75rem",
-          fontWeight: 500,
-          textTransform: "uppercase",
-          letterSpacing: "0.03em",
-          color: "#49496D",
-        }}>
-          Powered by expert engineers from trusted brands
-        </p>
+        {/* "Powered by" label — framed between two hero-divider lines */}
+        <div className="flex flex-col items-center gap-3 mb-6 w-full">
+          <div className="hero-divider" />
+          <p style={{
+            fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            color: "#49496D",
+          }}>
+            Powered by expert engineers from trusted brands
+          </p>
+          <div className="hero-divider" />
+        </div>
 
         {/* Client logos with | separators */}
-        <div className="flex items-center justify-center mb-5">
+        <div className="flex items-center justify-center mb-10">
           {clientLogos.map((logo, i) => (
             <div key={logo.name} className="flex items-center">
               {i > 0 && <div className="mx-8" style={{ width: 1, height: 28, backgroundColor: "#CDCDDD" }} />}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={logo.src} alt={logo.name}
                 className="object-contain opacity-80 hover:opacity-100 transition-opacity"
-                style={{ height: 28, width: "auto" }} />
+                style={{ height: logo.h, width: "auto" }} />
             </div>
           ))}
         </div>
 
-        {/* "Leveraging" label */}
-        <p className="mb-7" style={{
-          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-          fontSize: "0.75rem",
-          fontWeight: 500,
-          textTransform: "uppercase",
-          letterSpacing: "0.03em",
-          color: "#49496D",
-        }}>
-          Leveraging industry-grade tools relied on by top tech teams
-        </p>
+        {/* "Leveraging" label — framed between two hero-divider lines */}
+        <div className="flex flex-col items-center gap-3 mb-6 w-full">
+          <div className="hero-divider" />
+          <p style={{
+            fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
+            fontSize: "0.75rem",
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: "0.05em",
+            color: "#49496D",
+          }}>
+            Leveraging industry-grade tools relied on by top tech teams
+          </p>
+          <div className="hero-divider" />
+        </div>
 
         {/* Tech icons row 1 */}
         <div className="flex flex-wrap items-center justify-center gap-8 mb-6">

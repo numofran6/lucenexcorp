@@ -12,7 +12,18 @@ const mn = "var(--font-manrope),'Manrope',sans-serif";
 
 export default function Stats() {
   return (
-    <section id="about" className="pt-20 pb-10 px-6" style={{ backgroundColor: "#EEEEF4" }}>
+    <section id="about" className="relative pt-20 pb-10 px-6" style={{ backgroundColor: "#EEEEF4" }}>
+
+      {/* Left bracket rail — full section height, pinned to viewport left edge */}
+      <div className="pg_line-wrap hidden md:flex" style={{ position: "absolute", left: 0, top: 0, bottom: 0, height: "100%", margin: 0 }}>
+        <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+      </div>
+
+      {/* Right bracket rail — full section height, pinned to viewport right edge */}
+      <div className="pg_line-wrap right hidden md:flex" style={{ position: "absolute", right: 0, top: 0, bottom: 0, height: "100%", margin: 0 }}>
+        <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
+      </div>
+
       <div className="mx-auto" style={{ maxWidth: "65rem" }}>
 
         {/* Overline */}
@@ -23,14 +34,7 @@ export default function Stats() {
           We build like it&apos;s our own.
         </p>
 
-        {/* Consulting card + stats in bracket rail */}
-        <div className="flex items-stretch">
-          {/* Left bracket */}
-          <div className="pg_line-wrap hidden md:flex">
-            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
-          </div>
-
-          <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0">
         {/* Consulting card — bento-wrap > bento-card-white */}
         <div className="bento-wrap mb-4">
           <div className="bento-card-white relative overflow-hidden p-6 flex flex-col md:flex-row md:items-center gap-6">
@@ -87,13 +91,7 @@ export default function Stats() {
             Start sharpening your idea.
           </a>
         </div>
-          </div>{/* end flex-1 */}
-
-          {/* Right bracket */}
-          <div className="pg_line-wrap right hidden md:flex">
-            <div className="pg_line-top" /><div className="pg_line-middle" /><div className="pg_line-bottom" />
-          </div>
-        </div>{/* end bracket rail flex */}
+        </div>
       </div>
     </section>
   );
