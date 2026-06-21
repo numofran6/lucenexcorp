@@ -73,7 +73,7 @@ export default function Hero() {
         {/* Overline — JetBrains Mono */}
         <p className="mb-4" style={{
           fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-          fontSize: "0.875rem",
+          fontSize: "var(--fs-label)",
           fontWeight: 500,
           textTransform: "uppercase",
           letterSpacing: "0.03em",
@@ -85,7 +85,7 @@ export default function Hero() {
         {/* Hero headline — Manrope 500, 3.5rem */}
         <h1 className="mb-4" style={{
           fontFamily: "var(--font-manrope),'Manrope',sans-serif",
-          fontSize: "3.5rem",
+          fontSize: "var(--fs-h1)",
           fontWeight: 500,
           lineHeight: 1.1,
           letterSpacing: "-0.01em",
@@ -109,17 +109,19 @@ export default function Hero() {
         </p>
 
         {/* CTA button — #013220, border-radius 10px, ring shadow */}
-        <a href="#contact" className="inline-block mb-12 text-white font-medium transition-opacity hover:opacity-90"
+        <a href="#contact" className="inline-flex items-center mb-12 text-white font-medium transition-opacity hover:opacity-90"
           style={{
             fontFamily: "var(--font-manrope),'Manrope',sans-serif",
             backgroundColor: "#013220",
-            fontSize: "1rem",
+            fontSize: "var(--fs-base)",
             fontWeight: 400,
             borderRadius: "10px",
             padding: "0.75rem 2rem",
             boxShadow: "var(--ring-shadow)",
+            gap: "0.5rem",
           }}>
           Contact Us
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
         {/* "Powered by" label — framed between two hero-divider lines */}
@@ -127,7 +129,7 @@ export default function Hero() {
           <div className="hero-divider" />
           <p style={{
             fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-            fontSize: "0.75rem",
+            fontSize: "var(--fs-label)",
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
@@ -156,7 +158,7 @@ export default function Hero() {
           <div className="hero-divider" />
           <p style={{
             fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-            fontSize: "0.75rem",
+            fontSize: "var(--fs-label)",
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.05em",

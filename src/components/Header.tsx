@@ -23,7 +23,7 @@ export default function Header() {
             src="https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/lucenex_logo_cropped.webp?fit=257%2C262&ssl=1"
             alt="Lucenex Corp" width={36} height={36}
             className="rounded-full" unoptimized priority />
-          <span style={{ fontFamily: mt, fontSize: "0.9375rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#013220" }}>
+          <span style={{ fontFamily: mt, fontSize: "var(--fs-base)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#013220" }}>
             Lucenex Corp
           </span>
         </div>
@@ -31,8 +31,9 @@ export default function Header() {
         {/* CTA — visible on tablet and up */}
         <a href="#contact"
           className="hidden md:inline-flex items-center text-white font-medium px-5 py-2.5 rounded-[10px] transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#000", fontFamily: pp, fontSize: "0.875rem", boxShadow: "var(--ring-shadow)" }}>
+          style={{ backgroundColor: "#013220", fontFamily: pp, fontSize: "var(--fs-sm)", gap: "0.4rem", boxShadow: "var(--ring-shadow)" }}>
           Book a Call
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
         {/* Mobile: logo + hamburger */}
@@ -54,19 +55,21 @@ export default function Header() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden px-6 py-5 flex flex-col gap-4"
+        <div className="md:hidden px-6 py-5 flex flex-col"
           style={{ backgroundColor: "#EEEEF4", borderTop: "1px solid #CDCDDD" }}>
           {navLinks.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)}
-              style={{ fontFamily: pp, fontSize: "1rem", fontWeight: 400, color: "#000" }}
-              className="hover:opacity-60 transition-opacity">
+              style={{ fontFamily: "var(--font-manrope),'Manrope',sans-serif", fontSize: "var(--fs-base)", fontWeight: 500, color: "#54547E", padding: "0.7rem 0", borderBottom: "1px solid #CDCDDD", display: "flex", alignItems: "center", justifyContent: "space-between", textDecoration: "none" }}
+              className="hover:text-black transition-colors">
               {label}
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           ))}
           <a href="#contact" onClick={() => setOpen(false)}
-            className="text-white text-sm font-medium px-5 py-2.5 rounded-[10px] text-center mt-1"
-            style={{ backgroundColor: "#000", fontFamily: pp }}>
+            className="text-white font-medium rounded-[10px] mt-4"
+            style={{ backgroundColor: "#013220", fontFamily: "var(--font-manrope),'Manrope',sans-serif", fontSize: "var(--fs-sm)", padding: "0.75rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.4rem", boxShadow: "var(--ring-shadow)", textDecoration: "none" }}>
             Book a Call
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       )}

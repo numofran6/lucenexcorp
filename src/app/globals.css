@@ -13,6 +13,16 @@
   --green-2:     #00221E;
   --blue-hover:  #0848C5;
   --ring-shadow: 0 0 0 0.25rem #e0e0eb, 0 0.125px 0.125rem 0.5px #bcbcd2;
+
+  /* Type scale — 8 steps, role-named, applied across all components */
+  --fs-label: 0.75rem;    /* 12px  JB Mono uppercase labels, metadata, captions */
+  --fs-sm:    0.875rem;   /* 14px  card descriptions, secondary text, CTA buttons */
+  --fs-base:  1rem;       /* 16px  primary body text, inputs, nav links */
+  --fs-lead:  1.0625rem;  /* 17px  section intro paragraphs */
+  --fs-card:  1.375rem;   /* 22px  card headings, h3/h4 */
+  --fs-stat:  2.5rem;     /* 40px  stat numbers */
+  --fs-h2:    3rem;       /* 48px  all section h2 headings */
+  --fs-h1:    3.5rem;     /* 56px  hero h1 */
 }
 
 @theme inline {
