@@ -102,7 +102,7 @@ export default function Services() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="services" className="relative py-24 px-6" style={{ backgroundColor: "#EEEEF4" }}>
+    <section id="services" className="relative py-24 px-6" style={{ backgroundColor: "#FAFAFA" }}>
       <div className="mx-auto" style={{ maxWidth: "65rem" }}>
 
         {/* Section header */}
@@ -110,13 +110,13 @@ export default function Services() {
           {/* Services icon */}
           <div className="mb-4 opacity-60">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="14" height="14" rx="3" fill="#49496D" />
-              <rect x="20" y="2" width="14" height="14" rx="3" fill="#49496D" />
-              <rect x="2" y="20" width="14" height="14" rx="3" fill="#49496D" />
-              <rect x="20" y="20" width="14" height="14" rx="3" fill="#49496D" />
+              <rect x="2" y="2" width="14" height="14" rx="3" fill="#B8860B" />
+              <rect x="20" y="2" width="14" height="14" rx="3" fill="#B8860B" />
+              <rect x="2" y="20" width="14" height="14" rx="3" fill="#B8860B" />
+              <rect x="20" y="20" width="14" height="14" rx="3" fill="#B8860B" />
             </svg>
           </div>
-          <p className="mb-4" style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.03em", color: "#49496D" }}>
+          <p className="mb-4" style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.03em", color: "#B8860B" }}>
             Our Services
           </p>
           <h2 className="mb-4" style={{
@@ -130,7 +130,7 @@ export default function Services() {
           }}>
             Data, AI &amp; Cloud<br />Engineering Hub
           </h2>
-          <p style={{ fontFamily: mn, fontSize: "var(--fs-lead)", lineHeight: 1.6, color: "#54547E", maxWidth: "40rem" }}>
+          <p style={{ fontFamily: mn, fontSize: "var(--fs-lead)", lineHeight: 1.6, color: "#6B7280", maxWidth: "40rem" }}>
             Data is the foundation of a data-driven future. By transforming raw information into
             reliable systems, actionable insights, and intelligent automation, we help businesses
             make better decisions, and scale with confidence.
@@ -157,7 +157,7 @@ export default function Services() {
                 <div className="flex items-start gap-6 p-7">
                   {/* Ghost number */}
                   <div className="shrink-0 flex items-start" style={{ width: "2.75rem", paddingTop: "0.25rem" }}>
-                    <span style={{ fontFamily: jb, fontSize: "2rem", fontWeight: 700, color: "#E0E0EB", lineHeight: 1, letterSpacing: "-0.03em" }}>
+                    <span style={{ fontFamily: jb, fontSize: "2rem", fontWeight: 700, color: "#E5E5E5", lineHeight: 1, letterSpacing: "-0.03em" }}>
                       {"0" + s.num}
                     </span>
                   </div>
@@ -167,7 +167,7 @@ export default function Services() {
                     <h3 className="mb-2" style={{ fontFamily: mn, fontSize: "var(--fs-card)", fontWeight: 500, color: "#000", lineHeight: 1.2 }}>
                       {s.title}
                     </h3>
-                    <p style={{ fontFamily: mn, fontSize: "var(--fs-base)", lineHeight: 1.6, color: "#54547E" }}>
+                    <p style={{ fontFamily: mn, fontSize: "var(--fs-base)", lineHeight: 1.6, color: "#6B7280" }}>
                       {s.description}
                     </p>
                   </div>
@@ -180,12 +180,12 @@ export default function Services() {
                 </div>
 
                 {/* Toggle container */}
-                <div className="relative overflow-hidden" style={{ borderTop: "1px solid #CDCDDD" }}>
+                <div className="relative overflow-hidden" style={{ borderTop: "1px solid #E8E8E8" }}>
                   <div className="steps_accordion_blob" aria-hidden />
                   <button
                     className="w-full flex items-center gap-2 px-7 py-4 transition-opacity hover:opacity-70"
                     onClick={() => setExpanded(expanded === i ? null : i)}
-                    style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "#49496D", textAlign: "left" }}>
+                    style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "#B8860B", textAlign: "left" }}>
                     See process details
                     <svg className={`w-4 h-4 transition-transform duration-200 ${expanded === i ? "rotate-180" : ""}`}
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,16 +212,16 @@ export default function Services() {
                               alignItems: "flex-start",
                               gap: "0.625rem",
                               padding: "0.75rem 0",
-                              borderBottom: "1px solid #CDCDDD",
+                              borderBottom: "1px solid #E8E8E8",
                             }}>
-                              <div style={{ flexShrink: 0, marginTop: "1px", color: "#49496D" }}>
+                              <div style={{ flexShrink: 0, marginTop: "1px", color: "#B8860B" }}>
                                 {card.icon}
                               </div>
                               <div style={{ minWidth: 0 }}>
-                                <div style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.07em", color: "#49496D", marginBottom: "0.2rem" }}>
+                                <div style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.07em", color: "#374151", marginBottom: "0.2rem" }}>
                                   {card.title}
                                 </div>
-                                <div style={{ fontFamily: mn, fontSize: "var(--fs-sm)", lineHeight: 1.5, color: "#54547E" }}>
+                                <div style={{ fontFamily: mn, fontSize: "var(--fs-sm)", lineHeight: 1.5, color: "#6B7280" }}>
                                   {card.desc}
                                 </div>
                               </div>

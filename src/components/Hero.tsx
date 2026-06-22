@@ -29,7 +29,7 @@ const techRow2 = [
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: "#EEEEF4", paddingTop: "7rem", paddingBottom: "4rem" }}>
+    <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: "#FAFAFA", paddingTop: "7rem", paddingBottom: "4rem" }}>
 
       {/* Hero blob — inline SVG, exact gradient from WP source, blur 2rem, mix-blend-mode color */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
@@ -39,7 +39,7 @@ export default function Hero() {
           maxWidth: "75rem",
           top: 0,
           left: "50%",
-          transform: "translateY(12%) translateX(-62%)",
+          transform: "translateY(12%) translateX(-50%)",
           filter: "blur(2rem)",
           mixBlendMode: "color",
         }}>
@@ -49,8 +49,8 @@ export default function Hero() {
             </g>
             <defs>
               <radialGradient id="heroGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600.86 214.739) scale(600 228.933)">
-                <stop stopColor="#EBFFF5"/>
-                <stop offset="1" stopColor="#E0E0FF"/>
+                <stop stopColor="#F0EDE8"/>
+                <stop offset="1" stopColor="#FEF6E0"/>
               </radialGradient>
             </defs>
           </svg>
@@ -77,7 +77,7 @@ export default function Hero() {
           fontWeight: 500,
           textTransform: "uppercase",
           letterSpacing: "0.03em",
-          color: "#49496D",
+          color: "#B8860B",
         }}>
           Advanced Data Intelligence &amp; AI Automation Solutions
         </p>
@@ -101,7 +101,7 @@ export default function Hero() {
           fontSize: "1.25rem",
           fontWeight: 400,
           lineHeight: 1.5,
-          color: "#54547E",
+          color: "#6B7280",
           maxWidth: "800px",
         }}>
           Lucenex Corp builds data platforms and AI-powered software that help
@@ -121,7 +121,7 @@ export default function Hero() {
             gap: "0.5rem",
           }}>
           Contact Us
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
 
         {/* "Powered by" label — framed between two hero-divider lines */}
@@ -133,7 +133,7 @@ export default function Hero() {
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
-            color: "#49496D",
+            color: "#6B7280",
           }}>
             Powered by expert engineers from trusted brands
           </p>
@@ -144,7 +144,7 @@ export default function Hero() {
         <div className="flex items-center justify-center mb-10">
           {clientLogos.map((logo, i) => (
             <div key={logo.name} className="flex items-center">
-              {i > 0 && <div className="mx-8" style={{ width: 1, height: 28, backgroundColor: "#CDCDDD" }} />}
+              {i > 0 && <div className="mx-8" style={{ width: 1, height: 28, backgroundColor: "#E8E8E8" }} />}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={logo.src} alt={logo.name}
                 className="object-contain opacity-80 hover:opacity-100 transition-opacity"
@@ -162,7 +162,7 @@ export default function Hero() {
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.05em",
-            color: "#49496D",
+            color: "#6B7280",
           }}>
             Leveraging industry-grade tools relied on by top tech teams
           </p>

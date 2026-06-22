@@ -12,7 +12,7 @@ export default function ContactSection() {
   const [state, formAction, pending] = useActionState(sendContactEmail, initial);
 
   return (
-    <section id="contact" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#EEEEF4" }}>
+    <section id="contact" className="relative py-24 px-6 overflow-hidden" style={{ backgroundColor: "#FAFAFA" }}>
 
       <style>{`
         /* Floating-label field wrapper */
@@ -22,7 +22,7 @@ export default function ContactSection() {
         .cx-input {
           display: block; width: 100%;
           background: transparent;
-          border: none; border-bottom: 1.5px solid #CDCDDD;
+          border: none; border-bottom: 1.5px solid #C8D5C5;
           padding: 0.5rem 0 0.75rem;
           font-size: var(--fs-base);
           font-family: var(--font-manrope, Manrope), sans-serif;
@@ -30,15 +30,15 @@ export default function ContactSection() {
           border-radius: 0;
           -webkit-appearance: none; appearance: none;
           transition: border-color 0.2s ease;
-          caret-color: #49496D;
+          caret-color: #B8860B;
         }
         .cx-input::placeholder { color: transparent; }
-        .cx-input:focus { border-color: #49496D; }
+        .cx-input:focus { border-color: #B8860B; }
 
         /* Floating label */
         .cx-label {
           position: absolute; top: 2.125rem; left: 0;
-          font-size: var(--fs-base); color: #54547E;
+          font-size: var(--fs-base); color: #6B7280;
           pointer-events: none; white-space: nowrap;
           line-height: 1;
           transition: transform 0.18s ease, font-size 0.18s ease,
@@ -53,7 +53,7 @@ export default function ContactSection() {
           font-size: var(--fs-label);
           letter-spacing: 0.08em;
           text-transform: uppercase;
-          color: #49496D;
+          color: #B8860B;
           font-family: var(--font-jetbrains, 'JetBrains Mono'), monospace;
         }
 
@@ -101,7 +101,7 @@ export default function ContactSection() {
           </g>
           <defs>
             <radialGradient id="ctaGrad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 216.434) scale(600 227.873)">
-              <stop stopColor="#EBFFF5" /><stop offset="1" stopColor="#E0E0FF" />
+              <stop stopColor="#F0EDE8" /><stop offset="1" stopColor="#FEF6E0" />
             </radialGradient>
           </defs>
         </svg>
@@ -113,17 +113,17 @@ export default function ContactSection() {
         <div className="text-center mb-10">
           <div className="flex justify-center mb-4 opacity-60">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="2" y="8" width="32" height="22" rx="3.5" fill="#49496D" />
-              <path d="M2 13 L18 23 L34 13" stroke="#EEEEF4" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              <rect x="2" y="8" width="32" height="22" rx="3.5" fill="#B8860B" />
+              <path d="M2 13 L18 23 L34 13" stroke="#EEF3EC" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             </svg>
           </div>
-          <p className="mb-4" style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "#49496D" }}>
+          <p className="mb-4" style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "#B8860B" }}>
             Contact Us
           </p>
           <h2 className="mb-3" style={{ fontFamily: pp, fontSize: "var(--fs-h2)", fontWeight: 500, lineHeight: 1.1, color: "#000" }}>
             Are you ready to take<br />your business to the next level?
           </h2>
-          <p style={{ fontFamily: mn, fontSize: "var(--fs-lead)", color: "#54547E" }}>
+          <p style={{ fontFamily: mn, fontSize: "var(--fs-lead)", color: "#6B7280" }}>
             Reach out to us and get instant clarity for your brand
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function ContactSection() {
               <div className="flex flex-col items-center py-10 gap-4">
                 <div style={{
                   display: "flex", alignItems: "center", gap: "0.75rem",
-                  backgroundColor: "#1a1a2e", color: "#fff",
+                  backgroundColor: "#0A1A0A", color: "#fff",
                   padding: "0.75rem 1.25rem", borderRadius: "0.75rem",
                   fontFamily: mn, fontSize: "var(--fs-sm)", fontWeight: 500,
                   width: "100%", maxWidth: "22rem",
@@ -147,7 +147,7 @@ export default function ContactSection() {
                   </svg>
                   Message sent successfully!
                 </div>
-                <p style={{ fontFamily: mn, fontSize: "var(--fs-sm)", color: "#54547E" }}>
+                <p style={{ fontFamily: mn, fontSize: "var(--fs-sm)", color: "#6B7280" }}>
                   We&apos;ll be in touch within 24 hours.
                 </p>
               </div>
@@ -199,7 +199,7 @@ export default function ContactSection() {
                   ) : (
                     <div style={{
                       fontFamily: jb, fontSize: "var(--fs-label)",
-                      color: "#9797B9", letterSpacing: "0.03em",
+                      color: "#9DAB9A", letterSpacing: "0.03em",
                     }}>
                       All fields required
                     </div>
@@ -227,8 +227,8 @@ export default function ContactSection() {
                     {pending ? "Sending…" : (
                       <>
                         Send Message
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="arr">
+                          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
                         </svg>
                       </>
                     )}
