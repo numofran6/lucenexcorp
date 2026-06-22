@@ -2,8 +2,8 @@ import Image from "next/image";
 import cx from "./Hero.module.scss";
 
 const clientLogos = [
-  { name: "Yassir",   src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg",                                           h: 28 },
-  { name: "RankMath", src: "https://lucenexcorp.com/wp-content/uploads/2026/01/rank-math-logo.svg",                                                      h: 28 },
+  { name: "Yassir",   src: "/logos/logo-yassir.svg",                                                                                                     h: 28 },
+  { name: "RankMath", src: "/logos/rank-math-logo.svg",                                                                                                  h: 28 },
   { name: "one.com",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/onecom-removebg-preview.png?fit=600%2C74&ssl=1",                h: 18 },
 ];
 
@@ -14,8 +14,8 @@ const techRow1 = [
   { name: "Looker",     src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-google-looker-50.png?fit=50%2C50" },
   { name: "Snowflake",  src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/icons8-snowflake-48.webp?fit=48%2C48" },
   { name: "DuckDB",     src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/duckdb-icon-logo-png_seeklogo-554697.webp?fit=300%2C300" },
-  { name: "Databricks", src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Databricks-Red-scaled.webp?fit=2560%2C1856" },
-  { name: "dbt",        src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Dbt-scaled.webp?fit=300%2C206" },
+  { name: "Databricks", src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Databricks-Red-scaled.webp?fit=2560%2C1856", cls: "w-16 h-16" },
+  { name: "dbt",        src: "https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/02/Dbt-scaled.webp?fit=300%2C206",                cls: "w-16 h-16" },
 ];
 
 const techRow2 = [
@@ -120,7 +120,7 @@ export default function Hero() {
           {techRow1.map(t => (
             // eslint-disable-next-line @next/next/no-img-element
             <img key={t.name} src={t.src} alt={t.name} title={t.name}
-              className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              className={`${t.cls ?? "w-10 h-10"} object-contain opacity-80 hover:opacity-100 transition-opacity`} />
           ))}
         </div>
 

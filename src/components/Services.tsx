@@ -173,10 +173,12 @@ export default function Services() {
                 <div className={`${cx.toggleBorder} relative overflow-hidden`}>
                   <div className="steps_accordion_blob" aria-hidden />
                   <button
-                    className={`${cx.toggleBtn} w-full flex items-center px-7 py-4 transition-opacity hover:opacity-70`}
+                    className={`${cx.toggleBtn} relative z-10 w-full flex items-center px-7 py-4 transition-opacity hover:opacity-70`}
                     onClick={() => setExpanded(expanded === i ? null : i)}>
                     See process details
-                    <svg className={`arr w-4 h-4 transition-transform duration-200 ${expanded === i ? "rotate-180" : ""}`}
+                    <svg
+                      className={`ml-auto shrink-0 w-4 h-4 ${expanded === i ? "rotate-180" : ""}`}
+                      style={{ transition: "transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>

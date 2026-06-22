@@ -87,9 +87,17 @@
   letter-spacing: 0.02em;
   color: #013220;
   text-decoration: none;
-  border-bottom: 1.5px solid #013220;
-  padding-bottom: 2px;
-  display: inline-block;
+  display: inline;
+  box-shadow: inset 0 -1.5px 0 0 #013220;
+  padding-bottom: 1px;
+  transition:
+    color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  &:hover {
+    color: #B8860B;
+    box-shadow: inset 0 -1.5px 0 0 #B8860B;
+  }
 }
 
 .linksList {
