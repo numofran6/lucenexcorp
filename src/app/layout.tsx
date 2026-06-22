@@ -7,9 +7,70 @@ const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["lati
 const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["400","500","600","700"] });
 const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["400","500","600","700"] });
 
+const SITE_URL = "https://lucenexcorp.com";
+
 export const metadata: Metadata = {
-  title: "Lucenex Corp — Data, Analytics & AI",
-  description: "Advanced Data Intelligence & AI Automation Solutions",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Lucenex Corp — Data Engineering, Analytics & AI",
+    template: "%s | Lucenex Corp",
+  },
+  description:
+    "Lucenex Corp delivers data engineering, analytics, AI automation, and cloud architecture solutions that help businesses move faster and build with confidence.",
+  keywords: [
+    "data engineering",
+    "AI automation",
+    "cloud architecture",
+    "analytics",
+    "business intelligence",
+    "data strategy",
+    "machine learning",
+    "data consulting",
+    "ETL pipelines",
+    "cloud engineering",
+  ],
+  authors: [{ name: "Lucenex Corp", url: SITE_URL }],
+  creator: "Lucenex Corp",
+  publisher: "Lucenex Corp",
+  category: "Technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    siteName: "Lucenex Corp",
+    title: "Lucenex Corp — Data Engineering, Analytics & AI",
+    description:
+      "Data engineering, analytics, AI automation, and cloud architecture solutions that help businesses move faster and build with confidence.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Lucenex Corp — Data Engineering, Analytics & AI",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lucenex Corp — Data Engineering, Analytics & AI",
+    description:
+      "Data engineering, analytics, AI automation, and cloud architecture solutions.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
