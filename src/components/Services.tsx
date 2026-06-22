@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-
-const mn = "var(--font-manrope),'Manrope',sans-serif";
-const jb = "var(--font-jetbrains),'JetBrains Mono',monospace";
+import cx from "./Services.module.scss";
 
 function S({ children }: { children: React.ReactNode }) {
   return (
@@ -102,13 +100,13 @@ export default function Services() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="services" className="relative py-24 px-6" style={{ backgroundColor: "#FAFAFA" }}>
-      <div className="mx-auto" style={{ maxWidth: "65rem" }}>
+    <section id="services" className={`${cx.section} relative py-24 px-6`}>
+      <div className={`${cx.inner} mx-auto`}>
 
         {/* Section header */}
         <div className="flex flex-col items-center text-center mb-12">
           {/* Services icon */}
-          <div className="mb-4 opacity-60">
+          <div className={cx.sectionIcon}>
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="2" y="2" width="14" height="14" rx="3" fill="#B8860B" />
               <rect x="20" y="2" width="14" height="14" rx="3" fill="#B8860B" />
@@ -116,21 +114,13 @@ export default function Services() {
               <rect x="20" y="20" width="14" height="14" rx="3" fill="#B8860B" />
             </svg>
           </div>
-          <p className="mb-4" style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.03em", color: "#B8860B" }}>
+          <p className={`${cx.overline} mb-4`}>
             Our Services
           </p>
-          <h2 className="mb-4" style={{
-            fontFamily: "var(--font-poppins),'Poppins',sans-serif",
-            fontSize: "var(--fs-h2)",
-            fontWeight: 500,
-            lineHeight: 1.1,
-            color: "#000",
-            textTransform: "uppercase",
-            letterSpacing: "-0.01em",
-          }}>
+          <h2 className={`${cx.heading} mb-4`}>
             Data, AI &amp; Cloud<br />Engineering Hub
           </h2>
-          <p style={{ fontFamily: mn, fontSize: "var(--fs-lead)", lineHeight: 1.6, color: "#6B7280", maxWidth: "40rem" }}>
+          <p className={cx.description}>
             Data is the foundation of a data-driven future. By transforming raw information into
             reliable systems, actionable insights, and intelligent automation, we help businesses
             make better decisions, and scale with confidence.
@@ -154,40 +144,39 @@ export default function Services() {
               )}
               <div className="bento-card-white relative overflow-hidden">
                 {/* Card content */}
-                <div className="flex items-start gap-6 p-7">
+                <div className="flex items-start gap-6 px-7 py-4">
                   {/* Ghost number */}
-                  <div className="shrink-0 flex items-start" style={{ width: "2.75rem", paddingTop: "0.25rem" }}>
-                    <span style={{ fontFamily: jb, fontSize: "2rem", fontWeight: 700, color: "#E5E5E5", lineHeight: 1, letterSpacing: "-0.03em" }}>
+                  <div className={`${cx.badgeWrap} shrink-0 flex items-start`}>
+                    <span className={cx.badgeNum}>
                       {"0" + s.num}
                     </span>
                   </div>
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="mb-2" style={{ fontFamily: mn, fontSize: "var(--fs-card)", fontWeight: 500, color: "#000", lineHeight: 1.2 }}>
+                    <h3 className={`${cx.cardTitle} mb-2`}>
                       {s.title}
                     </h3>
-                    <p style={{ fontFamily: mn, fontSize: "var(--fs-base)", lineHeight: 1.6, color: "#6B7280" }}>
+                    <p className={cx.cardBody}>
                       {s.description}
                     </p>
                   </div>
 
                   {/* Video */}
-                  <div className="hidden md:block shrink-0 rounded-xl overflow-hidden" style={{ width: 220, height: 140 }}>
+                  <div className={`${cx.videoThumb} hidden md:block shrink-0 rounded-xl overflow-hidden`}>
                     <video src={s.video} autoPlay loop muted playsInline
                       className="w-full h-full object-cover" />
                   </div>
                 </div>
 
                 {/* Toggle container */}
-                <div className="relative overflow-hidden" style={{ borderTop: "1px solid #E8E8E8" }}>
+                <div className={`${cx.toggleBorder} relative overflow-hidden`}>
                   <div className="steps_accordion_blob" aria-hidden />
                   <button
-                    className="w-full flex items-center gap-2 px-7 py-4 transition-opacity hover:opacity-70"
-                    onClick={() => setExpanded(expanded === i ? null : i)}
-                    style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", color: "#B8860B", textAlign: "left" }}>
+                    className={`${cx.toggleBtn} w-full flex items-center px-7 py-4 transition-opacity hover:opacity-70`}
+                    onClick={() => setExpanded(expanded === i ? null : i)}>
                     See process details
-                    <svg className={`w-4 h-4 transition-transform duration-200 ${expanded === i ? "rotate-180" : ""}`}
+                    <svg className={`arr w-4 h-4 transition-transform duration-200 ${expanded === i ? "rotate-180" : ""}`}
                       fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -200,28 +189,18 @@ export default function Services() {
                     transition: "grid-template-rows 0.35s cubic-bezier(0.4,0,0.2,1)",
                   }}>
                     <div style={{ overflow: "hidden" }}>
-                      <div style={{ padding: "0.25rem 1.75rem 2rem" }}>
-                        <div style={{
-                          display: "grid",
-                          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-                          gap: "0.625rem",
-                        }}>
+                      <div className={cx.detailPad}>
+                        <div className={cx.detailGrid}>
                           {details[i].map((card, j) => (
-                            <div key={j} style={{
-                              display: "flex",
-                              alignItems: "flex-start",
-                              gap: "0.625rem",
-                              padding: "0.75rem 0",
-                              borderBottom: "1px solid #E8E8E8",
-                            }}>
-                              <div style={{ flexShrink: 0, marginTop: "1px", color: "#B8860B" }}>
+                            <div key={j} className={cx.detailCard}>
+                              <div className={cx.detailIcon}>
                                 {card.icon}
                               </div>
-                              <div style={{ minWidth: 0 }}>
-                                <div style={{ fontFamily: jb, fontSize: "var(--fs-label)", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.07em", color: "#374151", marginBottom: "0.2rem" }}>
+                              <div className="min-w-0">
+                                <div className={cx.detailTitle}>
                                   {card.title}
                                 </div>
-                                <div style={{ fontFamily: mn, fontSize: "var(--fs-sm)", lineHeight: 1.5, color: "#6B7280" }}>
+                                <div className={cx.detailDesc}>
                                   {card.desc}
                                 </div>
                               </div>

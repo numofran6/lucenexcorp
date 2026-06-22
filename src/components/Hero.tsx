@@ -1,4 +1,5 @@
 import Image from "next/image";
+import cx from "./Hero.module.scss";
 
 const clientLogos = [
   { name: "Yassir",   src: "https://lucenexcorp.com/wp-content/uploads/2026/02/logo-yassir-forward-dark.svg",                                           h: 28 },
@@ -29,20 +30,11 @@ const techRow2 = [
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden" style={{ backgroundColor: "#FAFAFA", paddingTop: "7rem", paddingBottom: "4rem" }}>
+    <section id="hero" className={`relative overflow-hidden ${cx.section}`}>
 
       {/* Hero blob — inline SVG, exact gradient from WP source, blur 2rem, mix-blend-mode color */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden>
-        <div style={{
-          position: "absolute",
-          width: "100vw",
-          maxWidth: "75rem",
-          top: 0,
-          left: "50%",
-          transform: "translateY(12%) translateX(-50%)",
-          filter: "blur(2rem)",
-          mixBlendMode: "color",
-        }}>
+        <div className={cx.blob}>
           <svg width="1201" height="433" viewBox="0 0 1201 433" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "auto" }}>
             <g style={{ mixBlendMode: "color" }}>
               <path d="M608.564 0.179718C261.123 0.179718 0.860097 315.682 0.860352 421.606C0.86048 475.022 336.352 280.928 608.564 282.917C875.547 284.868 1200.86 478.886 1200.86 421.606C1200.86 306.059 946.652 0.179718 608.564 0.179718Z" fill="url(#heroGrad)"/>
@@ -58,68 +50,36 @@ export default function Hero() {
       </div>
 
       {/* Content — max-width 60rem, centered */}
-      <div className="relative mx-auto px-6 flex flex-col items-center text-center" style={{ maxWidth: "60rem" }}>
+      <div className={`relative mx-auto px-6 flex flex-col items-center text-center ${cx.content}`}>
 
         {/* Logo + brand name */}
         <div className="flex items-center gap-3 mb-6">
           <Image
             src="https://i0.wp.com/lucenexcorp.com/wp-content/uploads/2026/01/lucenex_logo_cropped.webp?fit=257%2C262&ssl=1"
             alt="Lucenex" width={64} height={64} className="rounded-full" unoptimized priority />
-          <span style={{ fontFamily: "var(--font-montserrat),'Montserrat',sans-serif", fontSize: "1.7rem", fontWeight: 600 }}>
+          <span className={cx.brandName}>
             LUCENEX
           </span>
         </div>
 
         {/* Overline — JetBrains Mono */}
-        <p className="mb-4" style={{
-          fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-          fontSize: "var(--fs-label)",
-          fontWeight: 500,
-          textTransform: "uppercase",
-          letterSpacing: "0.03em",
-          color: "#B8860B",
-        }}>
+        <p className={`mb-4 ${cx.overline}`}>
           Advanced Data Intelligence &amp; AI Automation Solutions
         </p>
 
         {/* Hero headline — Manrope 500, 3.5rem */}
-        <h1 className="mb-4" style={{
-          fontFamily: "var(--font-manrope),'Manrope',sans-serif",
-          fontSize: "var(--fs-h1)",
-          fontWeight: 500,
-          lineHeight: 1.1,
-          letterSpacing: "-0.01em",
-          color: "#000000",
-          maxWidth: "860px",
-        }}>
+        <h1 className={`mb-4 ${cx.headline}`}>
           Data, Analytics &amp; AI That Power Smarter Decisions
         </h1>
 
         {/* Subtitle */}
-        <p className="mb-6" style={{
-          fontFamily: "var(--font-manrope),'Manrope',sans-serif",
-          fontSize: "1.25rem",
-          fontWeight: 400,
-          lineHeight: 1.5,
-          color: "#6B7280",
-          maxWidth: "800px",
-        }}>
+        <p className={`mb-6 ${cx.subtitle}`}>
           Lucenex Corp builds data platforms and AI-powered software that help
           businesses automate smarter and make decisions with confidence.
         </p>
 
         {/* CTA button — #013220, border-radius 10px, ring shadow */}
-        <a href="#contact" className="inline-flex items-center mb-12 text-white font-medium transition-opacity hover:opacity-90"
-          style={{
-            fontFamily: "var(--font-manrope),'Manrope',sans-serif",
-            backgroundColor: "#013220",
-            fontSize: "var(--fs-base)",
-            fontWeight: 400,
-            borderRadius: "10px",
-            padding: "0.75rem 2rem",
-            boxShadow: "var(--ring-shadow)",
-            gap: "0.5rem",
-          }}>
+        <a href="#contact" className={`inline-flex items-center mb-12 text-white font-medium transition-opacity hover:opacity-90 ${cx.cta}`}>
           Contact Us
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="arr"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -127,14 +87,7 @@ export default function Hero() {
         {/* "Powered by" label — framed between two hero-divider lines */}
         <div className="flex flex-col items-center gap-3 mb-6 w-full">
           <div className="hero-divider" />
-          <p style={{
-            fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-            fontSize: "var(--fs-label)",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-            color: "#6B7280",
-          }}>
+          <p className={cx.caption}>
             Powered by expert engineers from trusted brands
           </p>
           <div className="hero-divider" />
@@ -144,7 +97,7 @@ export default function Hero() {
         <div className="flex items-center justify-center mb-10">
           {clientLogos.map((logo, i) => (
             <div key={logo.name} className="flex items-center">
-              {i > 0 && <div className="mx-8" style={{ width: 1, height: 28, backgroundColor: "#E8E8E8" }} />}
+              {i > 0 && <div className={`mx-8 ${cx.logoSep}`} />}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={logo.src} alt={logo.name}
                 className="object-contain opacity-80 hover:opacity-100 transition-opacity"
@@ -156,14 +109,7 @@ export default function Hero() {
         {/* "Leveraging" label — framed between two hero-divider lines */}
         <div className="flex flex-col items-center gap-3 mb-6 w-full">
           <div className="hero-divider" />
-          <p style={{
-            fontFamily: "var(--font-jetbrains),'JetBrains Mono',monospace",
-            fontSize: "var(--fs-label)",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            letterSpacing: "0.05em",
-            color: "#6B7280",
-          }}>
+          <p className={cx.caption}>
             Leveraging industry-grade tools relied on by top tech teams
           </p>
           <div className="hero-divider" />

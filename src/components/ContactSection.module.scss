@@ -1,0 +1,224 @@
+/* ─── Section shell ─────────────────────────────────────── */
+.section {
+  background-color: #fafafa;
+}
+
+/* ─── Blob container ────────────────────────────────────── */
+.blobWrap {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(2rem);
+  width: 75rem;
+  max-width: 90vw;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Inner content wrapper ─────────────────────────────── */
+.contentWrap {
+  max-width: 50rem;
+  z-index: 1;
+}
+
+/* ─── Header elements ───────────────────────────────────── */
+.overline {
+  font-family: var(--font-jetbrains, "JetBrains Mono"), monospace;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #b8860b;
+}
+
+.heading {
+  font-family: var(--font-poppins, "Poppins"), sans-serif;
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #000;
+}
+
+.subtitle {
+  font-family: var(--font-manrope, "Manrope"), sans-serif;
+  font-size: var(--fs-lead);
+  color: #6b7280;
+}
+
+/* ─── Form card inner padding ───────────────────────────── */
+.formPad {
+  padding: 2.5rem 2.75rem;
+}
+
+/* ─── Success state ─────────────────────────────────────── */
+.successWrap {
+  max-width: 22rem;
+  width: 100%;
+}
+
+.successBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0a1a0a;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-family: var(--font-manrope, "Manrope"), sans-serif;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.successMsg {
+  font-family: var(--font-manrope, "Manrope"), sans-serif;
+  font-size: var(--fs-sm);
+  color: #6b7280;
+}
+
+/* ─── Error / hint text ─────────────────────────────────── */
+.errorMsg {
+  font-family: var(--font-jetbrains, "JetBrains Mono"), monospace;
+  font-size: var(--fs-label);
+  color: #b91c1c;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.hint {
+  font-family: var(--font-jetbrains, "JetBrains Mono"), monospace;
+  font-size: var(--fs-label);
+  color: #9dab9a;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Submit button (static styles only) ───────────────── */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #013220;
+  color: #fff;
+  font-family: var(--font-manrope, "Manrope"), sans-serif;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  padding: 0.75rem 1.625rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--ring-shadow);
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Floating-label form system
+   ═══════════════════════════════════════════════════════════ */
+
+/* Field wrapper */
+.field {
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+/* Base input / textarea */
+.input {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #c8d5c5;
+  padding: 0.5rem 0 0.75rem;
+  font-size: var(--fs-base);
+  font-family: var(--font-manrope, Manrope), sans-serif;
+  color: #000;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s ease;
+  caret-color: #b8860b;
+}
+
+.input::placeholder {
+  color: transparent;
+}
+
+.input:focus {
+  border-color: #b8860b;
+}
+
+/* Floating label */
+.label {
+  position: absolute;
+  top: 2.125rem;
+  left: 0;
+  font-size: var(--fs-base);
+  color: #6b7280;
+  pointer-events: none;
+  white-space: nowrap;
+  line-height: 1;
+  transition:
+    transform 0.18s ease,
+    font-size 0.18s ease,
+    color 0.18s ease,
+    letter-spacing 0.18s ease,
+    font-family 0.18s ease;
+}
+
+/* Floated state — triggered by content or focus */
+.input:not(:placeholder-shown) + .label,
+.input:focus + .label {
+  transform: translateY(-1.75rem);
+  font-size: var(--fs-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b8860b;
+  font-family: var(--font-jetbrains, "JetBrains Mono"), monospace;
+}
+
+/* Two-column row for email + subject */
+.row2 {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 2.75rem;
+  margin-bottom: 2rem;
+}
+
+/* Row spacer for message */
+.row1 {
+  margin-bottom: 2.25rem;
+}
+
+/* Submit row: error left, button right */
+.submitRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .row2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .submitRow {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .submitBtn {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .label {
+    transition: none;
+  }
+}

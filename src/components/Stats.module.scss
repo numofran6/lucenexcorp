@@ -1,0 +1,94 @@
+.section {
+  background-color: #fafafa;
+}
+
+.railAbsolute {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  margin: 0;
+}
+
+.railAbsoluteRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  margin: 0;
+}
+
+.inner {
+  max-width: 65rem;
+}
+
+.overline {
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #b8860b;
+}
+
+.consultingCard {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-card);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000;
+}
+
+.divider {
+  width: 1px;
+  height: 64px;
+  background-color: #e8e8e8;
+}
+
+.cardBody {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+.statValue {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-stat);
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-sm);
+  color: #6b7280;
+}
+
+.quote {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-card);
+  font-weight: 400;
+  color: #000;
+  line-height: 1.4;
+}
+
+.cta {
+  background-color: #013220;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-base);
+  box-shadow: var(--ring-shadow);
+  gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}

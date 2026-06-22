@@ -1,0 +1,129 @@
+.section {
+  background-color: #FAFAFA;
+}
+
+.inner {
+  max-width: 65rem;
+}
+
+.sectionIcon {
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.overline {
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #B8860B;
+}
+
+.heading {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: #6B7280;
+  max-width: 40rem;
+}
+
+.badgeNum {
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E5E5E5;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.badgeWrap {
+  width: 2.75rem;
+  padding-top: 0.25rem;
+}
+
+.cardTitle {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-card);
+  font-weight: 500;
+  color: #000;
+  line-height: 1.2;
+}
+
+.cardBody {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: #6B7280;
+}
+
+.videoThumb {
+  width: 220px;
+  height: 140px;
+}
+
+.toggleBorder {
+  border-top: 1px solid #E8E8E8;
+}
+
+.toggleBtn {
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #B8860B;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.detailPad {
+  padding: 0.25rem 1.75rem 2rem;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.625rem;
+}
+
+.detailCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.detailIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #B8860B;
+}
+
+.detailTitle {
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #374151;
+  margin-bottom: 0.2rem;
+}
+
+.detailDesc {
+  font-family: var(--font-manrope), 'Manrope', sans-serif;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: #6B7280;
+}
