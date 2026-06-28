@@ -201,6 +201,10 @@
 
 /* ─── Responsive ────────────────────────────────────────── */
 @media (max-width: 560px) {
+  .formPad {
+    padding: 1.75rem 1.25rem;
+  }
+
   .row2 {
     grid-template-columns: 1fr;
     gap: 0;
