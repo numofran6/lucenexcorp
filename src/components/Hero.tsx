@@ -94,10 +94,10 @@ export default function Hero() {
         </div>
 
         {/* Client logos with | separators */}
-        <div className="flex items-center justify-center mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-y-6 mb-10">
           {clientLogos.map((logo, i) => (
             <div key={logo.name} className="flex items-center">
-              {i > 0 && <div className={`mx-8 ${cx.logoSep}`} />}
+              {i > 0 && <div className={`mx-4 sm:mx-8 ${cx.logoSep}`} />}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={logo.src} alt={logo.name}
                 className="object-contain opacity-80 hover:opacity-100 transition-opacity"
